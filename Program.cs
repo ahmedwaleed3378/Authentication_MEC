@@ -64,19 +64,5 @@ app.UseHttpsRedirection();
 app.UseAuthorization();
 
 app.MapControllers();
-using (var scope = app.Services.CreateScope())
-{
-	var context = scope.ServiceProvider.GetRequiredService<AppDbContext>();
-
-	if (!context.Departments.Any())
-	{
-		context.Departments.AddRange(
-			new Department { Name = "Science" },
-			new Department { Name = "History" },
-			new Department { Name = "Fiction" }
-		);
-		context.SaveChanges();
-	}
-}
 
 app.Run();
