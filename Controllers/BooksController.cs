@@ -9,11 +9,11 @@ namespace Authentication.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    public class BoxController : ControllerBase
+    public class BooksController : ControllerBase
     {
         private readonly AppDbContext _context;
 
-        public BoxController(AppDbContext context)
+        public BooksController(AppDbContext context)
         {
             _context = context;
         }
